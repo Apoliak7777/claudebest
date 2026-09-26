@@ -68,7 +68,7 @@ Runtime nemá žiadne závislosti. `esbuild`, `playwright`, `jsqr` a `bysquare` 
 
 ## Ako je overená správnosť
 
-- **Parita s oficiálnym validátorom.** `scripts/parity.mjs` spustí tie isté `.sch` súbory cez referenčný Saxon-HE + SchXslt (Java) a cez engine Revízora na originálnych aj náhodne pokazených faktúrach. Porovnáva zoznam porušených pravidiel pravidlo po pravidle. Výsledok na aktuálnej verzii: **4 684 behov (UBL aj CII, 29 oficiálnych príkladov CEN/Peppol + vlastné vzorky, tisíce mutácií) bez jedinej nezhody.**
+- **Parita s oficiálnym validátorom.** `scripts/parity.mjs` spustí tie isté `.sch` súbory cez referenčný Saxon-HE + SchXslt (Java) a cez engine Revízora na originálnych aj náhodne pokazených faktúrach. Porovnáva zoznam porušených pravidiel pravidlo po pravidle. Výsledok na aktuálnej verzii: **4 684 behov (UBL aj CII, 44 oficiálnych príkladov CEN/Peppol + vlastné vzorky, tisíce mutácií) bez jedinej nezhody.**
 - **Zlaté testy bez Javy.** `test/fixtures/golden/` obsahuje 94 pokazených faktúr s výsledkom referenčného validátora; `npm test` ich overuje pri každej zmene.
 - **Generované faktúry** prechádzajú XSD schémou UBL 2.1 aj oficiálnymi pravidlami (round-trip 29 oficiálnych príkladov bez nových chýb).
 - **QR kódy** sa dekódujú nezávislou knižnicou jsQR pre verzie 1–40 × úrovne L/M/Q/H.
