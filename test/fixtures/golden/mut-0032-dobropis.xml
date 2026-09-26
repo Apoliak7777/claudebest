@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
+  <cbc:ID>D2026090007</cbc:ID>
+  <cbc:IssueDate>2026-09-25</cbc:IssueDate>
+  <cbc:TaxPointDate>2026-08-31</cbc:TaxPointDate>
+  <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
+  <cbc:Note>Dobropis k faktúre 2026090042 – reklamácia hodín implementácie.</cbc:Note>
+  <cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+  <cbc:BuyerReference>OBJ-2026-117</cbc:BuyerReference>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-08-01</cbc:StartDate>
+    <cbc:EndDate>2026-08-31</cbc:EndDate>
+  </cac:InvoicePeriod>
+  <cac:OrderReference>
+    <cbc:ID>OBJ-2026-117</cbc:ID>
+  </cac:OrderReference>
+  <cac:BillingReference>
+    <cac:InvoiceDocumentReference>
+      <cbc:ID>2026090042</cbc:ID>
+      <cbc:IssueDate>2026-09-24</cbc:IssueDate>
+    </cac:InvoiceDocumentReference>
+  </cac:BillingReference>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cbc:EndpointID schemeID="0245">2023456710</cbc:EndpointID>
+      <cac:PostalAddress>
+        <cbc:StreetName>Framborská 12</cbc:StreetName>
+        <cbc:CityName>Žilina</cbc:CityName>
+        <cbc:PostalZone>010 01</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>SK</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>SK2023456710</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Horáreň Digital s.r.o.</cbc:RegistrationName>
+        <cbc:CompanyID>54120781</cbc:CompanyID>
+        <cbc:CompanyLegalForm>Zapísaná v OR OS Žilina, oddiel Sro, vložka 81234/L</cbc:CompanyLegalForm>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Mgr. Eva Kováčová</cbc:Name>
+        <cbc:Telephone>+421 900 123 456</cbc:Telephone>
+        <cbc:ElectronicMail>fakturacia@horaren.example</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cbc:EndpointID schemeID="0245">2120987605</cbc:EndpointID>
+      <cac:PostalAddress>
+        <cbc:StreetName>Mierové námestie 7</cbc:StreetName>
+        <cbc:CityName>Trenčín</cbc:CityName>
+        <cbc:PostalZone>911 01</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>SK</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>SK2120987605</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Pekáreň Pod Hradom s.r.o.</cbc:RegistrationName>
+        <cbc:CompanyID>51987309</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Ján Horváth</cbc:Name>
+        <cbc:ElectronicMail>uctaren@pekaren.example</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode>30</cbc:PaymentMeansCode>
+    <cbc:PaymentDueDate>2026-10-09</cbc:PaymentDueDate>
+    <cbc:PaymentID>2026090042</cbc:PaymentID>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID>SK6811000000002629871234</cbc:ID>
+      <cac:FinancialInstitutionBranch>
+        
+      </cac:FinancialInstitutionBranch>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>Splatnosť 14 dní. Pri omeškaní úrok z omeškania podľa Obchodného zákonníka.</cbc:Note>
+  </cac:PaymentTerms>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="EUR">44.85</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="EUR">195.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="EUR">44.85</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>23.00</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="EUR">195.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="EUR">195.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="EUR">239.85</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="EUR">239.85</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:CreditNoteLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:CreditedQuantity unitCode="HUR">3</cbc:CreditedQuantity>
+    <cbc:LineExtensionAmount currencyID="EUR">195.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Name>Dobropis – 3 hodiny implementácie</cbc:Name>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>23</cbc:Percent>
+        
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="EUR">65</cbc:PriceAmount>
+    </cac:Price>
+  </cac:CreditNoteLine>
+</CreditNote>

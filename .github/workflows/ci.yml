@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main, 'claude/**']
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Unit + golden parity tests
+        run: npm test
+      - name: Build single-file app
+        run: npm run build
+      - name: dist/ is up to date
+        run: git diff --exit-code -- dist/
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: End-to-end (desktop + mobile)
+        run: npm run e2e
+
+  parity:
+    # Live comparison with the reference validator (Saxon-HE + SchXslt, Java)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - run: npm ci
+      - run: bash scripts/reference/setup.sh .reference
+      - name: 300 mutated invoices, rule-by-rule diff
+        run: node scripts/parity.mjs --ref .reference --corpus samples --mutants 300 --seed 42

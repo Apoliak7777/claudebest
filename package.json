@@ -1,0 +1,42 @@
+{
+  "name": "revizor",
+  "version": "0.1.0",
+  "description": "Revízor – offline e-faktúra (Peppol BIS 3.0 / EN 16931) SDK a aplikácia: validácia oficiálnymi pravidlami, vizualizácia, tvorba, PAY by square.",
+  "type": "module",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE.md",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "build": "node scripts/build.mjs",
+    "e2e": "node scripts/e2e.mjs",
+    "samples": "node scripts/make-samples.mjs",
+    "parity": "node scripts/parity.mjs",
+    "validate": "node cli/revizor.js validate"
+  },
+  "devDependencies": {
+    "bysquare": "^4.0.2",
+    "esbuild": "^0.25.12",
+    "jsqr": "^1.4.0",
+    "playwright": "^1.63.0"
+  },
+  "bin": {
+    "revizor": "cli/revizor.js"
+  },
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./node": "./src/node.js"
+  },
+  "files": [
+    "src",
+    "rules",
+    "cli",
+    "dist",
+    "README.md",
+    "LICENSE.md",
+    "NOTICE.md"
+  ]
+}

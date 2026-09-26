@@ -1,0 +1,164 @@
+<title>Revízor e-faktúr</title>
+<meta name="description" content="Kontrola, zobrazenie a vystavenie elektronických faktúr podľa EN 16931 a Peppol BIS 3.0. Offline, dáta neopúšťajú váš počítač.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>/*CSS*/</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="ink" x="-5%" y="-10%" width="110%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.6" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feComponentTransfer in="n" result="m"><feFuncA type="discrete" tableValues="1 1 1 0.55 1 1 0.7 1"/></feComponentTransfer>
+    <feComposite in="d" in2="m" operator="in"/>
+  </filter>
+</svg>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#kontrola" data-go="check">
+      <svg class="brand-mark" viewBox="0 0 34 34" aria-hidden="true">
+        <rect x="2.5" y="2.5" width="29" height="29" rx="6" fill="none" stroke="currentColor" stroke-width="2.2" transform="rotate(-6 17 17)"/>
+        <path d="M10 18.2l4.3 4.3L24.5 11.8" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>
+        <span class="brand-name" data-brand>Revízor</span><br>
+        <span class="brand-tag" data-tagline>e-faktúry podľa EN 16931 · Peppol BIS 3.0</span>
+      </span>
+    </a>
+    <nav class="tabs" role="tablist" aria-label="Sekcie">
+      <button class="tab" role="tab" id="tab-check" aria-selected="true" data-go="check">Kontrola</button>
+      <button class="tab" role="tab" id="tab-create" aria-selected="false" data-go="create">Vystaviť faktúru</button>
+      <button class="tab" role="tab" id="tab-batch" aria-selected="false" data-go="batch">Hromadná kontrola</button>
+      <button class="tab" role="tab" id="tab-about" aria-selected="false" data-go="about">Ako to funguje</button>
+    </nav>
+    <span class="privacy" title="Všetko beží vo vašom prehliadači. Faktúry sa nikam neodosielajú.">
+      <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 5V3.8a3 3 0 016 0V5M2.5 5h7v5.5h-7z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+      Offline · dáta neopúšťajú počítač
+    </span>
+  </div>
+</header>
+
+<main class="app">
+  <!-- ============ KONTROLA ============ -->
+  <section class="view" id="view-check" aria-labelledby="tab-check">
+    <div class="check-grid">
+      <aside class="side">
+        <label class="drop" id="drop" for="file">
+          <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M8 3h10l7 7v17H8z M18 3v7h7 M12 17l3 3 5-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <span class="drop-title">Pretiahnite sem e-faktúru</span>
+          <span class="drop-sub">XML vo formáte Peppol UBL alebo CII (ZUGFeRD, XRechnung, Factur-X XML) · alebo kliknite</span>
+          <input id="file" type="file" accept=".xml,text/xml,application/xml" class="visually-hidden">
+        </label>
+        <div class="samples">
+          <span class="samples-label">Vyskúšajte vzor:</span>
+          <button class="btn btn-sm" data-sample="ok">Platná faktúra</button>
+          <button class="btn btn-sm" data-sample="chyby">Faktúra s chybami</button>
+          <button class="btn btn-sm" data-sample="dobropis">Dobropis</button>
+        </div>
+        <div class="panel verdict" id="verdict" aria-live="polite"></div>
+        <div class="panel issues" id="issues"></div>
+      </aside>
+      <section class="panel doc" id="doc">
+        <div class="doc-bar">
+          <div class="seg" role="tablist" aria-label="Zobrazenie">
+            <button role="tab" id="dv-inv" aria-selected="true" data-dv="inv">Faktúra</button>
+            <button role="tab" id="dv-xml" aria-selected="false" data-dv="xml">XML</button>
+          </div>
+          <div class="doc-actions">
+            <label class="toggle"><input type="checkbox" id="show-bt"> Kódy BT</label>
+            <button class="btn btn-sm" id="act-copy">Kopírovať XML</button>
+            <button class="btn btn-sm dl-only" id="act-ubl" hidden>Stiahnuť ako Peppol UBL</button>
+            <button class="btn btn-sm dl-only" id="act-print">Tlačiť / PDF</button>
+          </div>
+        </div>
+        <div class="demo-note" id="demo-note" hidden>Ukážková verzia: sťahovanie súborov a tlač sú v tomto náhľade vypnuté. V plnej verzii stiahnete XML aj PDF jedným klikom.</div>
+        <div class="doc-body" id="doc-inv"></div>
+        <div class="xml" id="doc-xml" hidden></div>
+      </section>
+    </div>
+  </section>
+
+  <!-- ============ VYSTAVIŤ ============ -->
+  <section class="view" id="view-create" aria-labelledby="tab-create" hidden>
+    <div class="create-grid">
+      <form class="form" id="cform" novalidate>
+        <fieldset>
+          <legend>Doklad</legend>
+          <div class="fields">
+            <div class="field"><label for="c-type">Typ <span class="bt">BT-3</span></label>
+              <select id="c-type"><option value="380">Faktúra</option><option value="381">Dobropis</option><option value="384">Opravná faktúra</option><option value="386">Zálohová faktúra</option></select></div>
+            <div class="field"><label for="c-id">Číslo <span class="bt">BT-1</span></label><input id="c-id" required></div>
+            <div class="field"><label for="c-issue">Vystavená <span class="bt">BT-2</span></label><input id="c-issue" type="date" required></div>
+            <div class="field"><label for="c-due">Splatná <span class="bt">BT-9</span></label><input id="c-due" type="date"></div>
+            <div class="field"><label for="c-tax">Dátum dodania <span class="bt">BT-7</span></label><input id="c-tax" type="date"></div>
+            <div class="field"><label for="c-cur">Mena <span class="bt">BT-5</span></label><select id="c-cur"><option>EUR</option><option>CZK</option><option>USD</option><option>HUF</option><option>PLN</option></select></div>
+            <div class="field"><label for="c-ref">Objednávka / referencia <span class="bt">BT-10</span></label><input id="c-ref" placeholder="napr. OBJ-2026-117"></div>
+            <div class="field" id="c-prec-wrap" hidden><label for="c-prec">K faktúre č. <span class="bt">BT-25</span></label><input id="c-prec"></div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Dodávateľ</legend>
+          <div class="fields" data-party="s"></div>
+          <label class="toggle"><input type="checkbox" id="c-remember" checked> Zapamätať si dodávateľa v tomto prehliadači</label>
+        </fieldset>
+        <fieldset>
+          <legend>Odberateľ</legend>
+          <div class="fields" data-party="b"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Položky</legend>
+          <div class="lines-edit" id="c-lines"></div>
+          <div><button type="button" class="btn btn-sm" id="c-add">+ Pridať položku</button></div>
+        </fieldset>
+        <fieldset>
+          <legend>Platba</legend>
+          <div class="fields">
+            <div class="field"><label for="c-iban">IBAN <span class="bt">BT-84</span></label><input id="c-iban" autocomplete="off"><span class="hint" id="c-iban-hint"></span></div>
+            <div class="field"><label for="c-bic">BIC <span class="bt">BT-86</span></label><input id="c-bic" autocomplete="off"></div>
+            <div class="field"><label for="c-vs">Variabilný symbol <span class="bt">BT-83</span></label><input id="c-vs" inputmode="numeric" maxlength="10"></div>
+            <div class="field wide"><label for="c-note">Poznámka <span class="bt">BT-22</span></label><textarea id="c-note" rows="2"></textarea></div>
+          </div>
+        </fieldset>
+        <div class="form-actions">
+          <button type="button" class="btn btn-primary dl-only" id="c-dl">Stiahnuť e-faktúru (XML)</button>
+          <button type="button" class="btn dl-only" id="c-print">Tlačiť / PDF</button>
+          <button type="button" class="btn" id="c-copy">Kopírovať XML</button>
+          <button type="button" class="btn" id="c-check">Otvoriť v kontrole</button>
+          <button type="button" class="btn" id="c-reset">Nová faktúra</button>
+        </div>
+      </form>
+      <section class="panel doc" id="c-preview-panel">
+        <div class="live" id="c-live"></div>
+        <div class="doc-body" id="c-preview"></div>
+      </section>
+    </div>
+  </section>
+
+  <!-- ============ HROMADNE ============ -->
+  <section class="view" id="view-batch" aria-labelledby="tab-batch" hidden>
+    <div class="batch-head">
+      <div>
+        <h1>Hromadná kontrola</h1>
+        <p>Nahrajte desiatky e-faktúr naraz (XML alebo ZIP archív). Revízor ich skontroluje, spočíta základ dane a DPH a výsledok exportuje do Excelu (CSV).</p>
+      </div>
+      <div class="doc-actions">
+        <label class="btn btn-primary" for="bfile">Vybrať súbory</label>
+        <input id="bfile" type="file" accept=".xml,.zip,text/xml,application/xml,application/zip" multiple class="visually-hidden">
+        <button class="btn dl-only" id="b-csv" disabled>Export CSV</button>
+        <button class="btn" id="b-clear" disabled>Vymazať</button>
+      </div>
+    </div>
+    <label class="drop" id="bdrop" for="bfile" style="margin-top:16px">
+      <span class="drop-title">Pretiahnite sem viac súborov alebo ZIP</span>
+      <span class="drop-sub">Spracovanie prebieha lokálne, rýchlosťou desiatok faktúr za sekundu.</span>
+    </label>
+    <div class="stats" id="b-stats"></div>
+    <div class="table-wrap"><table class="grid" id="b-table"></table></div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="view about" id="view-about" aria-labelledby="tab-about" hidden></section>
+</main>
+
+<script>/*JS*/</script>

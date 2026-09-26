@@ -1,0 +1,1102 @@
+{
+ "base-dobropis.xml": {
+  "what": "original",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "base-faktura-chyby.xml": {
+  "what": "original",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "base-faktura-ok.xml": {
+  "what": "original",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0000-faktura-chyby.xml": {
+  "what": "empty cbc:ProfileID; dup cac:TaxSubtotal; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-14",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R007",
+    "fatal:PEPPOL-EN16931-R008",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0001-faktura-ok.xml": {
+  "what": "text cbc:LineExtensionAmount=1490; empty cbc:ID; text cbc:AllowanceChargeReasonCode=95.005",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CL-19",
+    "fatal:BR-CO-10",
+    "fatal:BR-S-08"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-CL002",
+    "fatal:PEPPOL-EN16931-R008",
+    "fatal:PEPPOL-EN16931-R120"
+   ]
+  }
+ },
+ "mut-0002-faktura-ok.xml": {
+  "what": "delete cac:Country; delete cac:ClassifiedTaxCategory; attr cbc:PriceAmount/@currencyID=XXX",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-09",
+    "fatal:BR-CO-04",
+    "fatal:BR-S-08",
+    "fatal:UBL-SR-48"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R051"
+   ]
+  }
+ },
+ "mut-0003-dobropis.xml": {
+  "what": "text cbc:Name=381; text cbc:IssueDate=2031-01-01",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0004-faktura-ok.xml": {
+  "what": "text cbc:LineExtensionAmount=1561; text cbc:ID=381",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-47",
+    "fatal:BR-48",
+    "fatal:BR-CO-10",
+    "fatal:BR-CO-17"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R120"
+   ]
+  }
+ },
+ "mut-0005-dobropis.xml": {
+  "what": "delete cac:TaxTotal; text cbc:CompanyID=17329103.0000",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-18",
+    "fatal:BR-S-01"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R053"
+   ]
+  }
+ },
+ "mut-0006-faktura-ok.xml": {
+  "what": "dup cac:SellersItemIdentification",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0007-faktura-chyby.xml": {
+  "what": "noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0008-faktura-chyby.xml": {
+  "what": "delete cbc:ID",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R008",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0011-dobropis.xml": {
+  "what": "noop",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0013-faktura-chyby.xml": {
+  "what": "noop; text cbc:ElectronicMail=VAT; delete cbc:CityName",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0014-faktura-chyby.xml": {
+  "what": "noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0015-dobropis.xml": {
+  "what": "delete cac:Country",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-11"
+   ],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0016-faktura-ok.xml": {
+  "what": "noop; noop; dup cac:TaxScheme",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0017-faktura-ok.xml": {
+  "what": "noop; text cbc:InvoicedQuantity=-3",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R120"
+   ]
+  }
+ },
+ "mut-0018-faktura-chyby.xml": {
+  "what": "noop; text cbc:InvoicedQuantity=10",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020",
+    "fatal:PEPPOL-EN16931-R120"
+   ]
+  }
+ },
+ "mut-0019-faktura-chyby.xml": {
+  "what": "noop; text cbc:TaxExclusiveAmount=-2116.7; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-13",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0020-faktura-ok.xml": {
+  "what": "delete cbc:Description; noop; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0021-faktura-chyby.xml": {
+  "what": "delete cbc:CityName; attr cbc:LineExtensionAmount/@currencyID=ZZZ",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CL-03",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-CL007",
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020",
+    "fatal:PEPPOL-EN16931-R051"
+   ]
+  }
+ },
+ "mut-0023-faktura-chyby.xml": {
+  "what": "text cbc:LineExtensionAmount=0; noop; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-10",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16",
+    "fatal:BR-S-08"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020",
+    "fatal:PEPPOL-EN16931-R120"
+   ]
+  }
+ },
+ "mut-0025-dobropis.xml": {
+  "what": "delete cbc:CompanyID; dup cbc:PaymentDueDate; text cbc:ID=VAT",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:UBL-SR-45"
+   ],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0028-faktura-ok.xml": {
+  "what": "noop; delete cbc:EndpointID; delete cac:FinancialInstitutionBranch",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0031-faktura-chyby.xml": {
+  "what": "delete cac:TaxScheme",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16",
+    "fatal:UBL-SR-53"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0032-dobropis.xml": {
+  "what": "delete cbc:ID; delete cac:TaxScheme; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-04",
+    "fatal:BR-S-02"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R008"
+   ]
+  }
+ },
+ "mut-0033-faktura-ok.xml": {
+  "what": "empty cbc:ID",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CL-18",
+    "fatal:BR-S-08"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R008"
+   ]
+  }
+ },
+ "mut-0034-dobropis.xml": {
+  "what": "empty cbc:ID; text cbc:CompanyID=541207811",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-47",
+    "fatal:BR-48",
+    "fatal:BR-CO-17"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R008"
+   ]
+  }
+ },
+ "mut-0035-dobropis.xml": {
+  "what": "delete cac:InvoiceDocumentReference",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-55",
+    "fatal:UBL-SR-07"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R008"
+   ]
+  }
+ },
+ "mut-0036-dobropis.xml": {
+  "what": "delete cbc:PostalZone; text cbc:ElectronicMail=381; text cbc:IssueDate=20190125",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-F001"
+   ]
+  }
+ },
+ "mut-0037-faktura-ok.xml": {
+  "what": "text cbc:CompanyLegalForm=false; text cbc:InvoiceTypeCode=126.6667",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CL-01"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-P0100"
+   ]
+  }
+ },
+ "mut-0040-faktura-ok.xml": {
+  "what": "delete cbc:DocumentCurrencyCode; delete cac:PostalAddress; delete cbc:Note",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-05",
+    "fatal:BR-10"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R008",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051"
+   ]
+  }
+ },
+ "mut-0043-faktura-chyby.xml": {
+  "what": "noop; delete cbc:RegistrationName",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-06",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0044-dobropis.xml": {
+  "what": "noop; noop; text cbc:CustomizationID=AE",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R004"
+   ]
+  }
+ },
+ "mut-0045-faktura-ok.xml": {
+  "what": "noop; empty cbc:ID; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-21"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R008"
+   ]
+  }
+ },
+ "mut-0046-faktura-ok.xml": {
+  "what": "noop; text cbc:BuyerReference=0088; attr cbc:InvoicedQuantity/@unitCode=USD",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CL-23"
+   ],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0047-faktura-ok.xml": {
+  "what": "text cbc:ID=20260900421; delete cbc:RegistrationName; text cbc:PriceAmount=130.0000",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-06"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R120"
+   ]
+  }
+ },
+ "mut-0048-faktura-chyby.xml": {
+  "what": "noop; delete cbc:PostalZone",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0049-faktura-ok.xml": {
+  "what": "delete cbc:IssueDate; dup cac:TaxScheme",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-03"
+   ],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0050-faktura-ok.xml": {
+  "what": "text cbc:Name=380; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0051-faktura-chyby.xml": {
+  "what": "empty cbc:ID",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-47",
+    "fatal:BR-48",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16",
+    "fatal:BR-CO-17"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R008",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0052-faktura-chyby.xml": {
+  "what": "empty cbc:PaymentID; text cbc:ID=true; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-04",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R008",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0053-faktura-chyby.xml": {
+  "what": "noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0054-faktura-ok.xml": {
+  "what": "noop; text cbc:LineExtensionAmount=567",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-10",
+    "fatal:BR-S-08"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R120"
+   ]
+  }
+ },
+ "mut-0055-faktura-chyby.xml": {
+  "what": "noop; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0056-faktura-ok.xml": {
+  "what": "empty cbc:ID",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-04"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R008"
+   ]
+  }
+ },
+ "mut-0058-faktura-ok.xml": {
+  "what": "noop; delete cbc:ID",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R008"
+   ]
+  }
+ },
+ "mut-0059-faktura-chyby.xml": {
+  "what": "text cbc:TaxableAmount=567; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16",
+    "fatal:BR-CO-17",
+    "fatal:BR-S-08",
+    "fatal:BR-S-09"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0060-faktura-ok.xml": {
+  "what": "noop",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0061-dobropis.xml": {
+  "what": "noop; delete cbc:EndpointID; dup cac:PostalAddress",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R010"
+   ]
+  }
+ },
+ "mut-0062-faktura-ok.xml": {
+  "what": "text cbc:ID=58; dup cac:InvoiceLine; text cbc:ID=4.005",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-10",
+    "fatal:BR-S-08"
+   ],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0064-dobropis.xml": {
+  "what": "delete cbc:PaymentID",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0065-faktura-ok.xml": {
+  "what": "text cbc:PaymentMeansCode=300; delete cac:PartyLegalEntity",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-07",
+    "fatal:BR-CL-16"
+   ],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0066-faktura-ok.xml": {
+  "what": "empty cbc:Description; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R008"
+   ]
+  }
+ },
+ "mut-0067-faktura-ok.xml": {
+  "what": "text cbc:AllowanceChargeReasonCode=-95",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CL-19"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-CL002"
+   ]
+  }
+ },
+ "mut-0069-faktura-ok.xml": {
+  "what": "delete cbc:ID",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-47",
+    "fatal:BR-48",
+    "fatal:BR-CO-17"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R008"
+   ]
+  }
+ },
+ "mut-0070-dobropis.xml": {
+  "what": "dup cac:TaxTotal; delete cac:PartyTaxScheme; text cbc:TaxAmount=-44.85",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-14",
+    "fatal:BR-CO-15"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R053"
+   ]
+  }
+ },
+ "mut-0071-faktura-chyby.xml": {
+  "what": "delete cac:TaxScheme",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-04",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0072-faktura-ok.xml": {
+  "what": "dup cac:PaymentMeans; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:UBL-SR-46"
+   ],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0074-dobropis.xml": {
+  "what": "delete cbc:PaymentMeansCode; text cbc:IdentificationCode=XXX",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-49",
+    "fatal:BR-CL-14"
+   ],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0075-faktura-chyby.xml": {
+  "what": "noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0076-faktura-chyby.xml": {
+  "what": "empty cbc:DocumentCurrencyCode; attr cbc:PriceAmount/@currencyID=XXX; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-05",
+    "fatal:BR-CL-04",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R008",
+    "fatal:PEPPOL-EN16931-R020",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051",
+    "fatal:PEPPOL-EN16931-R051"
+   ]
+  }
+ },
+ "mut-0077-faktura-ok.xml": {
+  "what": "noop",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0078-faktura-chyby.xml": {
+  "what": "dup cac:PostalAddress",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0079-faktura-ok.xml": {
+  "what": "text cbc:EndDate=2000-01-01; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-29"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R111"
+   ]
+  }
+ },
+ "mut-0081-faktura-ok.xml": {
+  "what": "noop; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0082-faktura-chyby.xml": {
+  "what": "text cbc:CityName=380",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0083-dobropis.xml": {
+  "what": "text cbc:CityName=XXX; text cbc:CompanyID=XX; delete cac:Contact",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-09"
+   ],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0084-dobropis.xml": {
+  "what": "text cbc:ID=XX; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0085-faktura-chyby.xml": {
+  "what": "noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0086-faktura-ok.xml": {
+  "what": "text cbc:Name=SK2020000000; text cbc:RegistrationName=XX",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0087-faktura-chyby.xml": {
+  "what": "noop; noop; dup cbc:StreetName",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0090-faktura-ok.xml": {
+  "what": "delete cac:TaxCategory",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-47",
+    "fatal:BR-48",
+    "fatal:BR-CO-17"
+   ],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0092-dobropis.xml": {
+  "what": "noop; dup cbc:ID; delete cbc:ID",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0093-faktura-chyby.xml": {
+  "what": "noop; delete cac:InvoicePeriod; text cbc:Name=0088",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0095-faktura-ok.xml": {
+  "what": "noop; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0096-faktura-ok.xml": {
+  "what": "noop",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0097-faktura-chyby.xml": {
+  "what": "delete cac:InvoiceLine",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-10",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16",
+    "fatal:BR-S-08"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0098-dobropis.xml": {
+  "what": "delete cac:OrderReference; dup cbc:TaxPointDate",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0100-faktura-chyby.xml": {
+  "what": "empty cbc:ID",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CL-18",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16",
+    "fatal:BR-S-08"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R008",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0101-faktura-chyby.xml": {
+  "what": "text cbc:PriceAmount=3901; text cbc:ID=0.6667; empty cbc:ID",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CL-17",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R008",
+    "fatal:PEPPOL-EN16931-R020",
+    "fatal:PEPPOL-EN16931-R120"
+   ]
+  }
+ },
+ "mut-0102-dobropis.xml": {
+  "what": "text cbc:Percent=24; noop; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-17",
+    "fatal:BR-S-08",
+    "fatal:BR-S-09"
+   ],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0105-faktura-ok.xml": {
+  "what": "noop; noop; delete cbc:InvoiceTypeCode",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-04"
+   ],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0108-dobropis.xml": {
+  "what": "noop",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0109-faktura-ok.xml": {
+  "what": "noop; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0110-dobropis.xml": {
+  "what": "text cbc:ID=E",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-E-08",
+    "fatal:BR-E-09",
+    "fatal:BR-E-10",
+    "fatal:BR-S-01"
+   ],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0111-faktura-ok.xml": {
+  "what": "noop",
+  "failed": {
+   "CEN-EN16931-UBL": [],
+   "PEPPOL-EN16931-UBL": []
+  }
+ },
+ "mut-0112-faktura-chyby.xml": {
+  "what": "delete cbc:InvoiceTypeCode; text cbc:TaxAmount=474.8",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-04",
+    "fatal:BR-CO-14",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16",
+    "fatal:BR-CO-17",
+    "fatal:BR-S-09"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0113-faktura-chyby.xml": {
+  "what": "delete cbc:Percent; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16",
+    "fatal:BR-S-05",
+    "fatal:BR-S-08"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0114-faktura-chyby.xml": {
+  "what": "delete cbc:InvoicedQuantity; empty cbc:CityName",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-22",
+    "fatal:BR-23",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R008",
+    "fatal:PEPPOL-EN16931-R020",
+    "fatal:PEPPOL-EN16931-R120"
+   ]
+  }
+ },
+ "mut-0115-faktura-chyby.xml": {
+  "what": "attr cbc:TaxInclusiveAmount/@currencyID=EUR; attr cbc:PriceAmount/@currencyID=USD; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020",
+    "fatal:PEPPOL-EN16931-R051"
+   ]
+  }
+ },
+ "mut-0116-faktura-chyby.xml": {
+  "what": "delete cbc:TaxAmount; noop; delete cbc:ID",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-47",
+    "fatal:BR-48",
+    "fatal:BR-CO-14",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16",
+    "fatal:BR-CO-17"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R008",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ },
+ "mut-0119-faktura-chyby.xml": {
+  "what": "delete cac:TaxSubtotal; text cbc:ID=false; noop",
+  "failed": {
+   "CEN-EN16931-UBL": [
+    "fatal:BR-CO-14",
+    "fatal:BR-CO-15",
+    "fatal:BR-CO-16"
+   ],
+   "PEPPOL-EN16931-UBL": [
+    "fatal:PEPPOL-EN16931-R003",
+    "fatal:PEPPOL-EN16931-R020"
+   ]
+  }
+ }
+}
